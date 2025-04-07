@@ -15,10 +15,17 @@ main{
     }
 
 header {
-    background-color: #333;
+    background-color: #221611;
     color: white;
     padding: 20px;
     text-align: center;
+    margin:5px;
+    border-radius: 10px;
+    opacity: 0.9;
+}
+
+.naslov{
+    font-family: Impact, fantasy;
 }
 
 nav ul {
