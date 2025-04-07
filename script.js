@@ -34,3 +34,7 @@ function displayMotors() {
 if (window.location.pathname.endsWith("rent.html")) {
     displayMotors();
 }
+
+
+/*O NAMA*/
+c
