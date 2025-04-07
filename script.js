@@ -15,22 +15,22 @@ function displayMotors() {
     const motors = [
         {
             name: "Yamaha MT-07",
-            price: "250 kn/dan",
+            price: "25 eur/dan",
             image: "slike/yamaha07.jpg"
         },
         {
             name: "Honda CB500F",
-            price: "200 kn/dan",
+            price: "20 eur/dan",
             image: "slike/hondaMotor.jpg"//njuškalo
         },
         {
             name: "BMW R1250GS",
-            price: "400 kn/dan",
+            price: "40 eur/dan",
             image: "slike/bmwMotor.webp" //adv pulse
         },
         {
             name: "Ducati Monster",
-            price: "300 kn/dan",
+            price: "30 eur/dan",
             image: "slike/ducatiMonster.avif" //bike dekho
         }
     ];
