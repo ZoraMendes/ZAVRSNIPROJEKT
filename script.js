@@ -51,8 +51,7 @@ if (window.location.pathname.endsWith("rent.html")) {
 }
 
 
-<<<<<<< Updated upstream
-=======
+
 //Košarica:
 let cart = [];
 
@@ -116,7 +115,5 @@ if (window.location.pathname.includes("rent.html")) {
 
 
 
-
->>>>>>> Stashed changes
 /*O NAMA*/
-c
+

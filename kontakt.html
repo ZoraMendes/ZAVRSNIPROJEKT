@@ -1,14 +1,17 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontakt | Moto Projekt</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.0.7/dist/full.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="style.css">
-</head>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-neutral text-neutral-content min-h-screen flex flex-col">
 
-
-<body>
+    <!-- Header -->
     <header>
         <nav>
             <ul>
@@ -21,6 +24,50 @@
         </nav>
         <h1>RENT A MOTORCYCLE</h1>
         <p>Izaberi i rezerviraj svoj motor već danas!</p>
+        
     </header>
-</body>
+
+    <!-- Kontakt sekcija -->
+    <main class="flex-grow container mx-auto p-8">
+      <div class="max-w-2xl mx-auto bg-base-200 p-8 rounded-xl shadow-md">
+        <h2 class="text-3xl font-bold text-center text-red-500 mb-6">Kontaktiraj nas</h2>
+
+        <form class="space-y-4">
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Ime i prezime</span>
+            </label>
+            <input type="text" placeholder="Unesite vaše ime" class="input input-bordered" required />
+          </div>
+
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Email adresa</span>
+            </label>
+            <input type="email" placeholder="npr. ivan@gmail.com" class="input input-bordered" required />
+          </div>
+
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Poruka</span>
+            </label>
+            <textarea class="textarea textarea-bordered h-32" placeholder="Vaša poruka..." required></textarea>
+          </div>
+
+          <div class="form-control mt-6">
+            <button type="submit" class="btn bg-red-800 hover:bg-red-900 text-white w-full">Pošalji poruku</button>
+
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer footer-center p-4 bg-black text-white mt-10">
+      <aside>
+        <p>© 2025 Moto Projekt. Sva prava pridržana.</p>
+      </aside>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>
