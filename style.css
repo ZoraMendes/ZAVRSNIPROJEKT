@@ -3,7 +3,16 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    background-image: url('pozadina.jpg');
+    background-size: cover; /* Ili contain, zavisno od efekta koji želite */
+    background-repeat: no-repeat; /* Sprečava ponavljanje slike */
+    background-position: center; /* Pozicionira sliku u centru */
 }
+
+main{
+   
+        
+    }
 
 header {
     background-color: #333;
