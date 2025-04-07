@@ -1,4 +1,18 @@
-function login() {
+// tailwind.config.js
+module.exports = {
+    content: [
+      "./index.html",
+      "./src/**/*.{js,ts,jsx,tsx}", // prilagodi putanjama ako treba
+    ],
+    theme: {
+      extend: {},
+    },
+    plugins: [require("daisyui")], // <--- dodaj ovo
+  }
+  
+  
+  
+  function login() {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
     const loginMessage = document.getElementById("login-message");
