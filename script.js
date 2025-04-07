@@ -13,28 +13,49 @@ function login() {
 
 function displayMotors() {
     const motors = [
-        { name: "Yamaha MT-07", price: "250 kn/dan" },
-        { name: "Honda CB500F", price: "200 kn/dan" },
-        { name: "BMW R1250GS", price: "400 kn/dan" },
-        { name: "Ducati Monster", price: "300 kn/dan" }
+        {
+            name: "Yamaha MT-07",
+            price: "250 kn/dan",
+            image: "slike/yamaha07.jpg"
+        },
+        {
+            name: "Honda CB500F",
+            price: "200 kn/dan",
+            image: "slike/hondaMotor.jpg"//njuškalo
+        },
+        {
+            name: "BMW R1250GS",
+            price: "400 kn/dan",
+            image: "slike/bmwMotor.webp" //adv pulse
+        },
+        {
+            name: "Ducati Monster",
+            price: "300 kn/dan",
+            image: "slike/ducatiMonster.avif" //bike dekho
+        }
     ];
 
     const motorList = document.getElementById("motor-list");
     motorList.innerHTML = "";
 
-    motors.forEach((motor) => {
-        const div = document.createElement("div");
-        div.classList.add("motor-item");
-        div.textContent = `${motor.name} - ${motor.price}`;
-        motorList.appendChild(div);
+    motors.forEach(motor => {
+        const card = document.createElement("div");
+        card.className = "motor-card";
+        card.innerHTML = `
+            <img src="${motor.image}" alt="${motor.name}">
+            <h3>${motor.name}</h3>
+            <p>${motor.price}</p>
+        `;
+        motorList.appendChild(card);
     });
 }
 
-// Prikaz motora na rent.html
-if (window.location.pathname.endsWith("rent.html")) {
+// Ako smo na stranici rent.html, pokreni prikaz kartica
+if (window.location.pathname.includes("rent.html")) {
     displayMotors();
 }
 
 
+
 /*O NAMA*/
-c
+

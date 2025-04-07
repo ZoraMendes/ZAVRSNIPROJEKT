@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    background-image: url('pozadina.jpg');
+    background-image: url('slike/pozadina.jpg');
     background-size: cover; /* Ili contain, zavisno od efekta koji želite */
     background-repeat: no-repeat; /* Sprečava ponavljanje slike */
     background-position: center; /* Pozicionira sliku u centru */
@@ -89,20 +89,35 @@ button:hover {
 }
 
 .motor-list {
-    margin: 20px auto;
-    max-width: 600px;
-    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    gap: 20px;
 }
 
-.motor-item {
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #eee;
-    border-radius: 5px;
+.motor-card {
+    background-color: white;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: center;
 }
 
+.motor-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.motor-card h3 {
+    margin: 10px 0 5px 0;
+}
+
+.motor-card p {
+    margin-bottom: 10px;
+    color: #666;
+}
 
 /*O NAMA*/
