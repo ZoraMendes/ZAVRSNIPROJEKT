@@ -24,7 +24,11 @@ header {
     opacity: 0.9;
 }
 
-.naslov{
+.stranice{
+    border-radius: 10px; /*ne radi*/
+}
+
+#naslov{
     font-family: Impact, fantasy;
 }
 
