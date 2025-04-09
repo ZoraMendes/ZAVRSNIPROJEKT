@@ -117,8 +117,6 @@ if (window.location.pathname.includes("rent.html")) {
 }
 
 
-//Košarica:
-let cart = [];
 
 function updateCartDisplay() {
     const cartDisplay = document.getElementById("cart-display");
@@ -181,4 +179,5 @@ if (window.location.pathname.includes("rent.html")) {
 
 
 /*O NAMA*/
+
 
