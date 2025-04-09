@@ -10,16 +10,7 @@ body {
 }
 
 main{
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-   
-        
-=======
     margin-top: 200px;
->>>>>>> Stashed changes
-=======
-    margin-top: 200px;
->>>>>>> Stashed changes
     }
 
 header {
@@ -100,25 +91,14 @@ button:hover {
     margin: 20px auto;
     max-width: 600px;
     background-color: white;
-<<<<<<< Updated upstream
+
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-<<<<<<< Updated upstream
-.motor-item {
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #eee;
-    border-radius: 5px;
-}
-
-=======
-=======
 .motor-card {
     background-color: white;
->>>>>>> Stashed changes
     width: 500px;
     height:450px;
     border-radius: 10px;
@@ -171,9 +151,5 @@ button:hover {
     background-color: #555;
 }
 
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 
 /*O NAMA*/
