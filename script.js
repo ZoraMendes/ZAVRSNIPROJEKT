@@ -26,7 +26,7 @@ module.exports = {
 }
 
 //kartice
-<<<<<<< Updated upstream
+
 function displayMotors() {
     const motors = [
         { name: "Yamaha MT-07", price: "250 kn/dan" },
@@ -52,8 +52,7 @@ if (window.location.pathname.endsWith("rent.html")) {
 }
 
 
-<<<<<<< Updated upstream
-=======
+
 //Košarica:
 let cart = [];
 
@@ -67,8 +66,8 @@ function addToCart(motor) {
     updateCartDisplay();
 }
 
-=======
->>>>>>> Stashed changes
+
+
 function displayMotors() {
     const motors = [
         {
@@ -181,8 +180,5 @@ if (window.location.pathname.includes("rent.html")) {
 
 
 
-
-
->>>>>>> Stashed changes
 /*O NAMA*/
-c
+
