@@ -100,30 +100,21 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
     margin: 20px auto;
     max-width: 600px;
     background-color: white;
-
-
     padding: 20px;
     gap: 20px;
 }
 
 .motor-card {
     background-color: white;
-
-    width: 400px;
-    height:400px;
-
     width: 500px;
     height:450px;
-
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     overflow: hidden;
     text-align: center;
-
     box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.1);
 
 }
