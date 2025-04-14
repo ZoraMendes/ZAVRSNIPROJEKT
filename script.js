@@ -75,17 +75,7 @@ if (window.location.pathname.includes("rent.html")) {
 
 
 //Košarica:
-let cart = [];
 
-function updateCartDisplay() {
-    const cartDisplay = document.getElementById("cart-display");
-    cartDisplay.textContent = `🛒 Košarica: ${cart.length}`;
-}
-
-function addToCart(motor) {
-    cart.push(motor);
-    updateCartDisplay();
-}
 
 
 
