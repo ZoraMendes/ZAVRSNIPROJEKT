@@ -16,20 +16,15 @@ main{
 
     }
 
-header {
-    background-color: #530808;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    margin:5px;
-    border-radius: 10px;
-    opacity: 0.9;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-}
+    header {
+        background-color: #221611;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        margin:5px;
+        border-radius: 10px;
+        opacity: 0.9;
+    }
 
 .stranice{
     border-radius: 10px; /*ne radi*/
