@@ -12,7 +12,7 @@
     <header>
         <nav>
             <ul>
-                <li><a href="rent.html">Početna</a></li>
+                <li><a href="oNama.html">O nama</a></li>
                 <li><a href="motori.html">Motori</a></li>
                 <li><a href="postaviSvojMotor.html">Postavi svoj motor</a></li>
                 <li><a href="kontakt.html">Kontakt</a></li>
@@ -23,14 +23,14 @@
         <p>Izaberi i rezerviraj svoj motor već danas!</p>
     </header>
 
-    <div class="max-w-3xl mx-auto bg-base-100 p-8 rounded-lg shadow-md">
-        <h1 class="text-3xl font-bold mb-6 text-center text-red-600">Dodaj svoj motor</h1>
+    <div class="max-w-2xl mx-auto bg-black bg-opacity-70 p-8 rounded-xl shadow-md ">
+      <h1 class="text-3xl font-bold mb-6 text-center text-red-600">Dodaj svoj motor</h1>
       
         <form id="motorForm" class="space-y-6">
           <!-- Ime motora -->
           <div class="form-control">
             <label class="label">
-              <span class="label-text">Ime motora</span>
+              <span class="label-text text-white">Ime motora</span>
             </label>
             <input type="text" class="input input-bordered w-full" id="motorName" placeholder="Npr. Yamaha R6" required />
           </div>
@@ -38,7 +38,7 @@
           <!-- Kilometraža -->
           <div class="form-control">
             <label class="label">
-              <span class="label-text">Kilometraža</span>
+              <span class="label-text text-white">Kilometraža</span>
             </label>
             <input type="number" class="input input-bordered w-full" id="motorMileage" placeholder="Npr. 12000 km" required />
           </div>
@@ -46,7 +46,7 @@
           <!-- Godište -->
           <div class="form-control">
             <label class="label">
-              <span class="label-text">Godište</span>
+              <span class="label-text text-white">Godište</span>
             </label>
             <input type="number" class="input input-bordered w-full" id="motorYear" placeholder="Npr. 2018" required />
           </div>
@@ -54,7 +54,7 @@
           <!-- Upload slike -->
           <div class="form-control">
             <label class="label">
-              <span class="label-text">Odaberi sliku motora</span>
+              <span class="label-text text-white">Odaberi sliku motora</span>
             </label>
             <input type="file" accept="image/*" class="file-input file-input-bordered w-full" id="motorImage" required />
           </div>
@@ -62,20 +62,20 @@
           <!-- Opis -->
           <div class="form-control">
             <label class="label">
-              <span class="label-text">Opis motora</span>
+              <span class="label-text text-white">Opis motora</span>
             </label>
             <textarea class="textarea textarea-bordered h-32" id="motorDescription" placeholder="Npr. Sportski motor s 600cc..." required></textarea>
           </div>
       
           <!-- Gumb za objavu -->
           <div class="form-control">
-            <button type="submit" class="btn bg-red-800 hover:bg-red-900 text-white w-full">Objavi motor</button>
+            <button type="submit" class="btn bg-red-800 hover:bg-red-900 text-white w-full text-white">Objavi motor</button>
           </div>
         </form>
       
         <!-- Pregled slike -->
         <div id="preview" class="mt-10 hidden">
-          <h2 class="text-xl font-semibold mb-2">Tvoj motor:</h2>
+          <h2 class="text-xl font-semibold mb-2 text-white">Tvoj motor:</h2>
           <img id="previewImg" src="#" alt="Pregled slike" class="w-full rounded-lg mb-4" />
           <p id="previewOpis" class="italic text-sm text-gray-400"></p>
         </div>
