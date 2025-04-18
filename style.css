@@ -1,3 +1,23 @@
+@media (max-width: 600px) {
+    header {
+      padding: 15px;
+    }
+  
+    header h1 {
+      font-size: 1.8rem;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  
+    nav ul li a {
+      padding: 10px 15px;
+    }
+  }
+  
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -16,15 +36,17 @@ main{
 
     }
 
-    header {
-        background-color: #221611;
+header {
+        background-color: #530808;
         color: white;
         padding: 20px;
         text-align: center;
-        margin:5px;
-        border-radius: 10px;
-        opacity: 0.9;
-    }
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        }
 
 .stranice{
     border-radius: 10px; /*ne radi*/
