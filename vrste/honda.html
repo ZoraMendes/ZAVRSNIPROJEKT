@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CroMoto Rent - Motori</title>
+  <link rel="stylesheet" href="motori.css">
+  <style>
+    body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f4f4f4;
+padding-top: 80px;
+}
+
+header {
+background-color: #530808;
+color: white;
+padding: 20px;
+text-align: center;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 1000;
+}
+
+.stranice nav ul {
+list-style-type: none;
+margin: 0;
+padding: 15px 0;
+background-color: #444;
+display: flex;
+justify-content: center;
+gap: 20px;
+}
+
+nav ul li a {
+color: white;
+text-decoration: none;
+padding: 10px 20px;
+}
+
+nav ul li a:hover {
+background-color: #555;
+}
+
+#naslov {
+margin: 10px 0;
+font-family: Impact, fantasy;
+}
+
+
+
+.motor-list-section {
+padding: 40px 20px;
+margin-top: 20px;
+}
+
+.section-title {
+text-align: center;
+font-size: 40px;
+margin-bottom: 30px;
+color: #530808;
+}
+
+.motor-list {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 20px;
+}
+
+.motor-card {
+background-color: white;
+width: 250px;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+overflow: hidden;
+text-align: center;
+transition: transform 0.3s;
+}
+
+.motor-card:hover {
+transform: scale(1.05);
+}
+
+.motor-card img {
+width: 100%;
+height: 160px;
+object-fit: cover;
+}
+
+.motor-card h3 {
+margin: 10px 0 5px 0;
+}
+
+.motor-card p {
+margin: 5px 0;
+color: #666;
+}
+
+.motor-card button {
+margin: 10px;
+padding: 8px 12px;
+border: none;
+background-color: #333;
+color: white;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.motor-card button:hover {
+background-color: #555;
+}
+@media (max-width: 600px) {
+    header {
+      padding: 15px;
+    }
+  
+    header h1 {
+      font-size: 1.8rem;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  
+    nav ul li a {
+      padding: 10px 15px;
+    }
+  }
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+let cart = [];
+
+const motors = [
+{ name: "Honda CBR1000RR", price: "700 kn/dan", image: "../slike/hondaCBR1000RR.jpg" },
+{ name: "Honda CB500F", price: "300 kn/dan", image: "../slike/hondaCB500F.jpg" },
+{ name: "Honda CRF1000L Africa Twin", price: "600 kn/dan", image: "../slike/hondaAfricaTwin.jpg" },
+{ name: "Honda CBR600RR", price: "500 kn/dan", image: "../slike/hondaCBR600RR.jpg" },
+{ name: "Honda CB1000R", price: "550 kn/dan", image: "../slike/hondaCB1000RR.jpg" },
+{ name: "Honda Grom", price: "150 kn/dan", image: "../slike/hondaGrom.avif" }
+
+];
+
+function updateCartDisplay() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartDisplay = document.getElementById("cart-display");
+  if (cartDisplay) {
+    cartDisplay.textContent = `🛒 Košarica: ${cart.length}`;
+  }
+}
+
+
+function addToCart(motor) {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push(motor);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartDisplay();
+}
+
+function displayMotors() {
+const motorList = document.getElementById("motor-list");
+if (!motorList) return;
+
+motorList.innerHTML = "";
+
+motors.forEach(motor => {
+  const card = document.createElement("div");
+  card.className = "motor-card";
+  card.innerHTML = `
+    <img src="${motor.image}" alt="${motor.name}">
+    <h3>${motor.name}</h3>
+    <p>${motor.price}</p>
+    <button>Dodaj u košaricu</button>
+  `;
+  const btn = card.querySelector("button");
+  btn.addEventListener("click", () => addToCart(motor));
+  motorList.appendChild(card);
+});
+}
+
+displayMotors();
+updateCartDisplay();
+});
+
+</script>
+</head>
+<body>
+    
+  <header>
+    <div class="stranice">
+      <nav>
+        <ul>
+          <li><a href="../rent.html">Početna</a></li>
+          <li><a href="../motori.html">Motori</a></li>
+          <li><a href="../postaviSvojMotor.html">Postavi svoj motor</a></li>
+          <li><a href="../kontakt.html">Kontakt</a></li>
+          <li><a href="../kosarica.html">Košarica</a></li>
+          <li><a href="../index.html">Odjava</a></li>
+        </ul>
+      </nav>
+    </div>
+    <h1 id="naslov">CroMoto Rent</h1>
+    <div id="cart-display">🛒 Košarica: 0</div>
+  </header>
+
+  <main>
+    <section class="motor-list-section">
+      <h2 class="section-title">🏍️ Honda motori</h2>
+      <div class="motor-list" id="motor-list"></div>
+    </section>
+  </main>
+
+  <script src="motori.js"></script>
+</body>
+</html>
+

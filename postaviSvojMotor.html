@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
   </head>
-  <body class="bg-base-200 min-h-screen p-6">
+  <body class="bg-neutral text-neutral-content min-h-screen flex flex-col">
     <header>
       <div class="stranice">
       <nav>
@@ -24,6 +24,7 @@
       <h1 id="naslov">CroMoto Rent</h1>
       <p>Izaberi i rezerviraj svoj motor već danas!</p>
   </header>
+  <main class="flex-grow container mx-auto p-8">
     <div class="max-w-2xl mx-auto bg-black bg-opacity-70 p-8 rounded-xl shadow-md ">
       <h1 class="text-3xl font-bold mb-6 text-center text-red-600">Dodaj svoj motor</h1>
       
@@ -86,93 +87,9 @@
           <!-- Ovdje će se prikazivati kartice motora -->
         </div>
       </div>
+    </main>
       
-      <script>
-        const motorForm = document.getElementById('motorForm');
-        const motorNameInput = document.getElementById('motorName');
-        const motorMileageInput = document.getElementById('motorMileage');
-        const motorYearInput = document.getElementById('motorYear');
-        const motorImageInput = document.getElementById('motorImage');
-        const motorDescriptionInput = document.getElementById('motorDescription');
-        const preview = document.getElementById('preview');
-        const previewImg = document.getElementById('previewImg');
-        const previewOpis = document.getElementById('previewOpis');
-        const motorGallery = document.getElementById('motorGallery');
       
-        // Funkcija za prikaz pregleda slike i opisa
-        motorImageInput.addEventListener('change', function (e) {
-          const file = e.target.files[0];
-          if (file) {
-            const reader = new FileReader();
-            reader.onload = function (e) {
-              previewImg.src = e.target.result;
-              previewOpis.textContent = motorDescriptionInput.value;
-              preview.classList.remove('hidden');
-            };
-            reader.readAsDataURL(file);
-          }
-        });
-      
-        motorDescriptionInput.addEventListener('input', function () {
-          if (motorImageInput.files.length > 0) {
-            previewOpis.textContent = motorDescriptionInput.value;
-          }
-        });
-      
-        motorForm.addEventListener('submit', function (e) {
-          e.preventDefault();
-      
-          // Uzmi podatke iz forme
-          const motorName = motorNameInput.value;
-          const motorMileage = motorMileageInput.value;
-          const motorYear = motorYearInput.value;
-          const motorImage = motorImageInput.files[0];
-          const motorDescription = motorDescriptionInput.value;
-      
-          // Provjeri jesu li svi podaci uneseni
-          if (motorName && motorMileage && motorYear && motorImage && motorDescription) {
-            // Kreiraj karticu za motor
-            const motorCard = document.createElement('div');
-            motorCard.classList.add('motor-card', 'bg-white', 'p-4', 'rounded-lg', 'shadow-md', 'text-center');
-            
-            // Dodaj sliku u karticu
-            const motorImg = document.createElement('img');
-            const reader = new FileReader();
-            reader.onload = function (e) {
-              motorImg.src = e.target.result;
-              motorImg.classList.add('w-full', 'h-auto', 'rounded-lg');
-              motorCard.appendChild(motorImg);
-            };
-            reader.readAsDataURL(motorImage);
-      
-            // Dodaj ime, kilometražu, godište i opis u karticu
-            const motorNameElement = document.createElement('h3');
-            motorNameElement.classList.add('mt-2', 'font-semibold');
-            motorNameElement.textContent = motorName;
-            motorCard.appendChild(motorNameElement);
-      
-            const motorInfo = document.createElement('p');
-            motorInfo.classList.add('text-sm', 'text-gray-500');
-            motorInfo.textContent = `Kilometraža: ${motorMileage} km, Godište: ${motorYear}`;
-            motorCard.appendChild(motorInfo);
-      
-            const motorDesc = document.createElement('p');
-            motorDesc.classList.add('mt-4', 'text-sm', 'text-gray-500');
-            motorDesc.textContent = motorDescription;
-            motorCard.appendChild(motorDesc);
-      
-            // Dodaj karticu u galeriju
-            motorGallery.appendChild(motorCard);
-      
-            // Resetiranje forme i pregleda
-            motorForm.reset();
-            preview.classList.add('hidden');
-          } else {
-            alert('Molimo unesite sve podatke!');
-          }
-        });
-
-      </script>
       <!-- Footer -->
     <footer class="footer footer-center p-4 bg-black text-white mt-10">
       <aside>
