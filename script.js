@@ -154,20 +154,3 @@ const motorForm = document.getElementById('motorForm');
             alert('Molimo unesite sve podatke!');
           }
         });
-
-
-
-        localStorage.setItem("kosarica", JSON.stringify(kosarica));
-        function odjava() {
-          // Briše košaricu
-          localStorage.removeItem("kosarica");
-      
-          // Ako želiš, možeš obrisati i druge korisničke podatke
-          localStorage.removeItem("korisnik");
-      
-          // Preusmjeri korisnika natrag na početnu/prijavu
-          window.location.href = "prijava.html";
-      }
-      
-
-
