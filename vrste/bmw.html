@@ -162,6 +162,7 @@ function updateCartDisplay() {
 
 function addToCart(motor) {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  motor.image=motor.image.replace(/\.\.\//g, '');
   cart.push(motor);
   localStorage.setItem("cart", JSON.stringify(cart));
   updateCartDisplay();
