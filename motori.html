@@ -242,7 +242,7 @@ updateCartDisplay();
           <li><a href="postaviSvojMotor.html">Postavi svoj motor</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
           <li><a href="kosarica.html">Košarica</a></li>
-          <li><a href="index.html">Odjava</a></li>
+          <li><a href="index.html" id="logout-link">Odjava</a></li>
         </ul>
       </nav>
     </div>
@@ -256,7 +256,9 @@ updateCartDisplay();
       <div class="motor-list" id="motor-list"></div>
     </section>
   </main>
-
+  <script>document.getElementById("logout-link")?.addEventListener("click", () => {
+    localStorage.removeItem("cart");
+  });</script>
   <script src="motori.js"></script>
 </body>
 </html>
