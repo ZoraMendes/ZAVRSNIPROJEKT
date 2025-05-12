@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Prijava - CroMoto Rent</title>
   <style>
-  body {
+ body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
@@ -93,12 +93,37 @@
     <input type="text" id="username" placeholder="Korisničko ime" required>
     <input type="password" id="password" placeholder="Lozinka" required>
     <button id="login-btn">Prijavi se</button>
-    <p>Nemate račun? <a href="#">Registrirajte se</a></p>
+    <p>Nemate račun? <a href="registracija.html">Registrirajte se</a></p>
+    <p id="error-msg" style="color: red;"></p>
   </div>
 
   <script>
-    document.getElementById("login-btn").addEventListener("click", function() {
-      window.location.href = "rent.html";
+    // Unaprijed definirani korisnici ako ih nema u LocalStorage
+    const defaultUsers = [
+      { username: 'ivan123', password: 'lozinka1' },
+      { username: 'ana456', password: 'lozinka2' },
+      { username: 'marko789', password: 'lozinka3' }
+    ];
+
+    if (!localStorage.getItem("users")) {
+      localStorage.setItem("users", JSON.stringify(defaultUsers));
+    }
+
+    document.getElementById("login-btn").addEventListener("click", function () {
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+
+      const foundUser = users.find(user => user.username === username && user.password === password);
+
+      if (foundUser) {
+        // Prijava uspješna
+        localStorage.setItem("loggedInUser", username);
+        window.location.href = "rent.html";
+      } else {
+        // Neuspješna prijava
+        document.getElementById("error-msg").textContent = "Neispravno korisničko ime ili lozinka.";
+      }
     });
   </script>
 
