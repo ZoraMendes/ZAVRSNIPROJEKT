@@ -184,7 +184,9 @@ motors.forEach(motor => {
     <button>Dodaj u košaricu</button>
   `;
   const btn = card.querySelector("button");
-  btn.addEventListener("click", () => addToCart(motor));
+  cartmotor=motor;
+  cartmotor.image = cartmotor.image.substring(3, motor.image.length);
+  btn.addEventListener("click", () => addToCart(cartmotor));
   motorList.appendChild(card);
 });
 }

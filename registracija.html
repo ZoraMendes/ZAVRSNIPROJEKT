@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registracija - CroMoto Rent</title>
+  <style>
+    /* Stilovi slični login stranici */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-image: url('slike/pozadina.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0;
+    }
+
+    header {
+      background-color: #530808;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    .register-container {
+      background-color: white;
+      padding: 50px 60px;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      text-align: center;
+      margin-top: 120px;
+      width: 400px;
+    }
+
+    input {
+      display: block;
+      width: 80%;
+      padding: 14px;
+      margin: 20px auto;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 12px 30px;
+      background-color: #530808;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #6b0d0d;
+    }
+
+    p {
+      color: #666;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>CroMoto Rent</h1>
+  </header>
+
+  <div class="register-container">
+    <h2>Registracija</h2>
+    <input type="text" id="new-username" placeholder="Korisničko ime" required>
+    <input type="password" id="new-password" placeholder="Lozinka" required>
+    <button id="register-btn">Registriraj se</button>
+    <p id="register-msg"></p>
+    <button id="back-to-login" style="margin-top: 15px; background-color: #999;">Natrag na prijavu</button>
+  </div>
+  
+
+  <script>
+    document.getElementById("register-btn").addEventListener("click", function () {
+      const username = document.getElementById("new-username").value.trim();
+      const password = document.getElementById("new-password").value.trim();
+
+      if (!username || !password) {
+        document.getElementById("register-msg").textContent = "Unesite korisničko ime i lozinku.";
+        return;
+      }
+
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+
+      const userExists = users.some(user => user.username === username);
+
+      if (userExists) {
+        document.getElementById("register-msg").textContent = "Korisničko ime već postoji.";
+        return;
+      }
+
+      users.push({ username, password });
+      localStorage.setItem("users", JSON.stringify(users));
+
+      document.getElementById("register-msg").style.color = "green";
+      document.getElementById("register-msg").textContent = "Registracija uspješna! Možete se prijaviti.";
+    });
+    document.getElementById("back-to-login").addEventListener("click", function () {
+    window.location.href = "index.html";
+  });
+</script>
+    <script>
+
+
+  </script>
+
+</body>
+</html>
